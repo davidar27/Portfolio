@@ -1,11 +1,5 @@
 import React from 'react';
 
-export const Picture = ({ className }) => {
-  return (
-    <img 
-      src="src\assets\images\avatar.svg" 
-      alt="Avatar"  
-      className={className}
-    />
-  );
+export const Picture = ({ icon, className }) => {
+  return <img src={icon} alt="Avatar" className={className} />;
 };

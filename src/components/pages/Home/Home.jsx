@@ -1,5 +1,6 @@
 import React from 'react';
 import { Picture } from '../../ui/Picture/Picture';
+import MiImage from '../../../assets/images/avatar.svg';
 import { motion } from 'framer-motion';
 
 export const Home = () => {
@@ -11,9 +12,9 @@ export const Home = () => {
 
   const { name, description } = info;
   const styles = {
-    section: "flex flex-col items-center justify-center h-[85vh] xl:gap-12 lg:gap-10 md:gap-5 sm:gap-3 bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)]",
+    section: "flex flex-col items-center justify-center h-[85vh] gap-y-10 px-4 bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)]",
     h1: "font-bold text-white hover:text-black transition-colors duration-300 xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl",
-    p: "hover:text-primary xl:text-xl lg:text-lg md:text-base sm:text-sm w-[90vw] text-center break-words",
+    p: "text-gray-800 hover:text-primary xl:text-xl lg:text-lg md:text-base sm:text-sm max-w-4xl mx-auto text-center break-words",
     picture: "xl:w-64 xl:h-64 lg:w-56 lg:h-56 md:w-44 md:h-44 sm:w-36 sm:h-36 rounded-full",
   };
 
@@ -33,7 +34,7 @@ export const Home = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}>
-      <Picture className={picture} />
+      <Picture className={picture} icon={MiImage}/>
       </motion.div>
 
       <motion.div
