@@ -10,6 +10,7 @@ export const NavBar = () => {
   return (
     <nav className={myNav}>
         <ul className={myUl}>
+            <ItemNavBar url="/" text="Inicio"/>
             <ItemNavBar url="/habtec" text="Habilidades Técnicas"/>
             <ItemNavBar url="/habsoc" text="Habilidades Sociales"/>
             <ItemNavBar url="/expro" text="Experiencia Profesional"/>

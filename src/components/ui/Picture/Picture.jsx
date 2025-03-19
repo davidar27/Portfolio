@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-export const Picture = ({ className = "" }) => {
+export const Picture = ({ className }) => {
   return (
-    <img
-      src="https://mattfarley.ca/img/mf-avatar.svg"
-      alt="Avatar"
-      className={className} 
+    <img 
+      src="src\assets\images\avatar.svg" 
+      alt="Avatar"  
+      className={className}
     />
   );
 };

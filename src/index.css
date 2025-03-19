@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+
 @theme{
     --color-primary: #6e07f3;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins-Bold.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    font-family: 'Poppins';
 }

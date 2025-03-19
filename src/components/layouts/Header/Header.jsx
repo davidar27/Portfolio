@@ -3,7 +3,7 @@ import { NavBar } from "../../layouts/NavBar/NavBar";
 import { Picture } from "../../ui/Picture/Picture";
 export const Header = () => {
   const styles = {
-    myHeader: "w-full p-4 flex justify-around items-center text-white bg-white", 
+    myHeader: "w-full p-4 flex justify-around items-center text-white bg-white h-[10vh]", 
     logo: "w-16 h-16 rounded-full",
   };
 

@@ -7,7 +7,7 @@ export const ItemNavBar = ({ url, text }) => {
       <NavLink
         to={url}
         className={({ isActive }) => 
-          isActive ? "text-blue-500 font-bold" : "text-primary"
+          isActive ? "text-primary font-bold" : "text-primary"
         }
       >
         {text}
