@@ -1,21 +1,51 @@
 import React from 'react';
 import { Picture } from '../../ui/Picture/Picture';
+import { motion } from 'framer-motion';
 
 export const Home = () => {
-  const styles = {
-    section: "flex flex-col items-center justify-center h-[90vh] gap-20",
-    h1: "text-5xl font-bold hover:text-primary transition-colors duration-300",
-    p: "text-2xl w-400 text-center",
-    picture: "w-64 h-64 rounded-full",
+
+  const info = {
+    name: "Jhonatan David Arcos Dominguez",
+    description: "Desarrollador Full Stack con experiencia en la creación de aplicaciones web modernas y eficientes. Especializado en tecnologías frontend como React y TailwindCSS, y con sólidos conocimientos en backend utilizando Node.js, Express y bases de datos como MySQL. Apasionado por resolver problemas complejos y entregar soluciones de alta calidad, siempre enfocado en el aprendizaje continuo y las mejores prácticas de desarrollo.",
   }
 
+  const { name, description } = info;
+  const styles = {
+    section: "flex flex-col items-center justify-center h-[85vh] xl:gap-12 lg:gap-10 md:gap-5 sm:gap-3 bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)]",
+    h1: "font-bold text-white hover:text-black transition-colors duration-300 xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl",
+    p: "hover:text-primary xl:text-xl lg:text-lg md:text-base sm:text-sm w-[90vw] text-center break-words",
+    picture: "xl:w-64 xl:h-64 lg:w-56 lg:h-56 md:w-44 md:h-44 sm:w-36 sm:h-36 rounded-full",
+  };
+
   const { section, h1, p, picture } = styles;
-  
+
   return (
     <section className={section}>
-      <h1 className={h1}>Jhonatan David Arcos Dominguez</h1>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}>
+        <h1 className={h1}>{name}</h1>
+
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}>
       <Picture className={picture} />
-      <p className={p}>Soy Jhonatan David Arcos Dominguez, desarrollador frontend con experiencia en React, TypeScript, Tailwind CSS y Node.js. Me apasiona crear interfaces limpias y funcionales, combinando mi conocimiento en bases de datos (SQL) y desarrollo backend para construir aplicaciones eficientes. He trabajado en proyectos de e-commerce, software de inventario y aplicaciones web interactivas, siempre enfocado en mejorar la experiencia del usuario y optimizar el rendimiento. 🚀</p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}>
+        <p className={p}>{description}</p>
+        </motion.div>
+
+  
+
+
     </section>
   );
 };

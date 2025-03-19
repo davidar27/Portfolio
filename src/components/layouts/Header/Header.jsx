@@ -1,17 +1,16 @@
 import React from "react";
 import { NavBar } from "../../layouts/NavBar/NavBar";
-import { Picture } from "../../ui/Picture/Picture";
 export const Header = () => {
   const styles = {
     myHeader: "w-full p-4 flex justify-around items-center text-white bg-white h-[10vh]", 
-    logo: "w-16 h-16 rounded-full",
+    myTitle: "text-4xl font-bold text-black",
   };
 
-  const { myHeader, logo } = styles;
+  const { myHeader, myTitle } = styles;
 
   return (
     <header className={myHeader}>
-      <Picture className={logo}  />
+      <h1 className={myTitle}>MiPortafolio</h1>
       <NavBar />
     </header>
   );
