@@ -3,47 +3,38 @@ import { Column } from "../../ui/Column/Column";
 import { FaReact, FaNode, FaGithub } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import styles from '../../../styles';
 
 export const TechnicalSkills = () => {
   const skills = [
     {
       icon: <FaReact />,
       title: "Desarrollador Frontend",
-      description: ["React", "TypeScript", "Tailwind CSS"],
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
       icon: <FaNode />,
       title: "Desarrollador Backend",
-      description: ["Node.js", "Express", "C#"],
+      technologies: ["Node.js", "Express", "C#"],
       delay: 0.3,
     },
     {
       icon: <FaGithub />,
       title: "Control de Versiones & Despliegue",
-      description: ["Git", "GitHub", "Clever Cloud"],
+      technologies: ["Git", "GitHub", "Clever Cloud"],
       delay: 0.5,
     },
   ];
   
 
-  const styles = {
-    mySection: "h-screen bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)] p-8 flex flex-col items-center justify-center" ,
-    myTitle: "text-5xl font-bold text-center mb-12 text-white",
-    myContainerSkills: "min-h-[80vh] w-[80vw]  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center text-center bg-white bg-opacity-50 p-6 rounded-lg shadow-lg",
-    myColumn: "bg-white bg-opacity-50 p-4 rounded-lg shadow-lg flex flex-col items-center justify-center h-full w-full max-w-xs gap-8",
-    myIcon: "text-8xl text-primary",
-    myTitleColumn: "text-3xl font-bold text-primary break-words",
-    myDescriptionColumn: "text-2xl font-light text-gray-800 text-left break-words !list-disc !list-inside",
-  };
 
 
-  const { mySection, myTitle, myContainerSkills, myColumn, myIcon, myTitleColumn, myDescriptionColumn } = styles;
   return (
-    <section className={mySection}>
-      <h2 className={myTitle}>Habilidades Técnicas</h2>
+    <section className={styles.mySection}>
+      <h2 className={styles.myTitle}>Habilidades Técnicas</h2>
 
-      <div className={myContainerSkills}>
-        {skills.map(({ icon, title, description, delay }, index) => (
+      <div className={styles.myContainer}>
+        {skills.map(({ icon, title, technologies, delay }, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
@@ -51,13 +42,13 @@ export const TechnicalSkills = () => {
             transition={{ duration: 0.5, delay }}
           >
             <Column
-              className={myColumn}
-              titleClassName={myTitleColumn}
-              iconClassName={myIcon}
-              descriptionClassName={myDescriptionColumn}
+              className={styles.myColumn}
+              titleClassName={styles.myTitleColumn}
+              iconClassName={styles.myIcon}
+              technologiesClassName={styles.mytechnologies}
               icon={icon}
               title={title}
-              description={description}
+              technologies={technologies}
             />
           </motion.div>
         ))}

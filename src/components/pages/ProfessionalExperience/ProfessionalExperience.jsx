@@ -1,40 +1,47 @@
-import React from 'react'
+import React from 'react';
+import styles from '../../../styles';
+import { Column } from '../../ui/Column/Column';
+import IconDonita from '../../../assets/images/icon_donita.jpg'
+import { Picture } from '../../ui/Picture/Picture';
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+
 
 export const ProfessionalExperience = () => {
-    const experienciaProfesional = [
+    const ProfessionalExperience = [
         {
-            titulo: "Desarrollo Backend - Tienda de Mini Donas",
-            tecnologias: ["TypeScript", "Express", "MySQL", "JWT"],
-            descripcion: "Implementación de autenticación, carrito de compras y gestión de productos."
+
+            title: "Desarrollo Backend - Tienda de Mini Donas",
+            description: "Implementación de autenticación, carrito de compras y gestión de productos.",
+            technologies: ["TypeScript", "Express", "MySQL", "JWT"],
         },
-        {
-            titulo: "Sistema de Inventario - Tienda de Ciclistas",
-            tecnologias: ["C#", "Windows Forms", "SQL Server Express"],
-            descripcion: "Desarrollo de un sistema de inventario aplicando el patrón de capas."
-        },
-        {
-            titulo: "Desarrollo Frontend con React",
-            tecnologias: ["React", "TypeScript", "Tailwind CSS"],
-            descripcion: "Creación de componentes personalizados y estilos con Tailwind."
-        },
-        {
-            titulo: "Mapas Interactivos y Geolocalización",
-            tecnologias: ["React", "APIs de Mapas"],
-            descripcion: "Integración de mapas interactivos en una aplicación web."
-        },
-        {
-            titulo: "Optimización de Consultas SQL",
-            tecnologias: ["SQL", "MySQL", "SQL Server"],
-            descripcion: "Uso de JOINs, filtrado avanzado y optimización de consultas."
-        },
-        {
-            titulo: "Infraestructura en la Nube",
-            tecnologias: ["Google Cloud Platform", "Google Firestore"],
-            descripcion: "Implementación de servicios en la nube para almacenamiento y bases de datos."
-        }
     ];
 
     return (
-        <div>ProfessionalExperience</div>
-    )
-}
+        <section className={`${styles.mySection} bg-[linear-gradient(to_bottom_right,#6e07f3_50%,white_50%)]`}>
+            <h1 className={styles.myTitle}>Experiencia Laboral</h1>
+            <div className={styles.myContainer}>
+                {ProfessionalExperience.map(({ title, description, technologies }, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
+                    >
+                        <Column
+                            className={`${styles.myColumn} drop-shadow-xl`}
+                            titleClassName={styles.myTitleColumn}
+                            iconClassName={styles.myIcon}
+                            descriptionClassName={styles.myDescriptionColumn}
+                            technologiesClassName={`${styles.mytechnologiesClassName}`}
+                            icon={<Picture className={styles.picture} icon={IconDonita} />}
+                            title={title}
+                            description={description}
+                            technologies={technologies}
+                        />
+                    </motion.div>
+                ))}
+            </div>
+        </section>
+    );
+};

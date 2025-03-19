@@ -3,6 +3,9 @@ import { Home } from './components/pages/Home/Home';
 import { Header } from './components/layouts/Header/Header';
 import { TechnicalSkills } from './components/pages/TechnicalSkills/TechnicalSkills';
 import { SocialSkills } from './components/pages/SocialSkills/SocialSkills';
+import { ProfessionalExperience } from './components/pages/ProfessionalExperience/ProfessionalExperience';
+import { Estudies } from './components/pages/Estudies/Estudies';
+import { Footer} from './components/layouts/Footer/Footer'
 
 function App() {
   return (
@@ -12,8 +15,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/habtec" element={<TechnicalSkills />} />
         <Route path="/habsoc" element={<SocialSkills />} />
-        {/* Agrega más rutas aquí */}
+        <Route path="/expro" element={<ProfessionalExperience />}/>
+        <Route path="/est" element={<Estudies />}/>
+       
       </Routes>
+      <Footer/>
     </div>
   );
 }

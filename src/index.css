@@ -3,6 +3,7 @@
 
 @theme{
     --color-primary: #6e07f3;
+    --color-button: #b783f9;
 }
 @font-face {
     font-family: 'Poppins';
