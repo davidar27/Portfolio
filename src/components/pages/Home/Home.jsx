@@ -1,6 +1,7 @@
 import React from 'react';
 import { Picture } from '../../ui/Picture/Picture';
 import MiImage from '../../../assets/images/avatar.svg';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 export const Home = () => {

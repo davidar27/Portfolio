@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Home } from './components/pages/Home/Home';
 import { Header } from './components/layouts/Header/Header';
 import { TechnicalSkills } from './components/pages/TechnicalSkills/TechnicalSkills';
+import { SocialSkills } from './components/pages/SocialSkills/SocialSkills';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/habtec" element={<TechnicalSkills />} />
+        <Route path="/habsoc" element={<SocialSkills />} />
         {/* Agrega más rutas aquí */}
       </Routes>
     </div>

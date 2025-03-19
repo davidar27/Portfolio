@@ -1,6 +1,7 @@
 import React from "react";
 import { Column } from "../../ui/Column/Column";
 import { FaReact, FaNode, FaGithub } from "react-icons/fa";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 export const TechnicalSkills = () => {
@@ -26,14 +27,15 @@ export const TechnicalSkills = () => {
   
 
   const styles = {
-    mySection: "h-screen bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)] p-8",
+    mySection: "h-screen bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)] p-8 flex flex-col items-center justify-center" ,
     myTitle: "text-5xl font-bold text-center mb-12 text-white",
-    myContainerSkills: "h-[80vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center text-center bg-white bg-opacity-50 p-8 rounded-lg shadow-lg",
-    myColumn: "bg-white bg-opacity-50 p-4 rounded-lg shadow-lg flex flex-col items-center justify-center h-full w-[20vw] gap-8",
+    myContainerSkills: "min-h-[80vh] w-[80vw]  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center text-center bg-white bg-opacity-50 p-6 rounded-lg shadow-lg",
+    myColumn: "bg-white bg-opacity-50 p-4 rounded-lg shadow-lg flex flex-col items-center justify-center h-full w-full max-w-xs gap-8",
     myIcon: "text-8xl text-primary",
-    myTitleColumn: "text-3xl font-bold text-primary",
-    myDescriptionColumn: "text-2xl font-light text-gray-800 text-left",
+    myTitleColumn: "text-3xl font-bold text-primary break-words",
+    myDescriptionColumn: "text-2xl font-light text-gray-800 text-left break-words !list-disc !list-inside",
   };
+
 
   const { mySection, myTitle, myContainerSkills, myColumn, myIcon, myTitleColumn, myDescriptionColumn } = styles;
   return (
