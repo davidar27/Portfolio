@@ -1,6 +1,7 @@
 import React from 'react';
 import { Picture } from '../../ui/Picture/Picture';
 import MiImage from '../../../assets/images/avatar.svg';
+import styles from '../../../styles';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
@@ -12,35 +13,33 @@ export const Home = () => {
   }
 
   const { name, description } = info;
-  const styles = {
-    section: "h-screen bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)] pt-14 flex flex-col items-center justify-center g-16",
-    h1: "font-bold text-white hover:text-black transition-colors duration-300 xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl",
+  const styles3 = {
+    section: "h-screen bg-[linear-gradient(to_bottom,#6e07f3_40%,white_40%)] p-30 flex flex-col items-center justify-center g-20 h-[80vh]",
+    h1: "text-white hover:text-black transition-colors duration-300 xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl",
     p: "text-gray-800 hover:text-primary xl:text-xl lg:text-lg md:text-base sm:text-sm max-w-4xl mx-auto text-center break-words",
     picture: "xl:w-64 xl:h-64 lg:w-56 lg:h-56 md:w-44 md:h-44 sm:w-36 sm:h-36 rounded-full",
   };
 
-  const { section, h1, p, picture } = styles;
 
   return (
-    <section className={section}>
+    <section className={styles.mySection}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}>
-        <h1 className={h1}>{name}</h1>
+        <h1 className={styles.myTitle}>{name}</h1>
 
       </motion.div>
 
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        onHoverStart={() => console.log('hover started!')}
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}>
-          <Picture className={picture} src={MiImage} />
+          <Picture className={styles.picture} src={MiImage} />
         </motion.div>
       </motion.button>
 
@@ -48,7 +47,7 @@ export const Home = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}>
-        <p className={p}>{description}</p>
+        <p className={styles.myDescription}>{description}</p>
       </motion.div>
 
 

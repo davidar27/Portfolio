@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 
 export const ProfessionalExperience = () => {
-    const ProfessionalExperience = [
+    const experiences = [
         {
-
+            icon: IconDonita,
             title: "Desarrollo Backend - Tienda de Mini Donas",
             description: "Implementación de autenticación, carrito de compras y gestión de productos.",
             technologies: ["TypeScript", "Express", "MySQL", "JWT"],
@@ -21,7 +21,7 @@ export const ProfessionalExperience = () => {
         <section className={`${styles.mySection} bg-[linear-gradient(to_bottom_right,#6e07f3_50%,white_50%)]`}>
             <h1 className={styles.myTitle}>Experiencia Laboral</h1>
             <div className={styles.myContainer}>
-                {ProfessionalExperience.map(({ title, description, technologies }, index) => (
+                {experiences.map(({ icon, title, description, technologies }, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 50 }}
@@ -32,9 +32,9 @@ export const ProfessionalExperience = () => {
                             className={`${styles.myColumn} drop-shadow-xl`}
                             titleClassName={styles.myTitleColumn}
                             iconClassName={styles.myIcon}
-                            descriptionClassName={styles.myDescriptionColumn}
+                            descriptionClassName={styles.myDescription}
                             technologiesClassName={`${styles.mytechnologiesClassName}`}
-                            icon={<Picture className={styles.picture} icon={IconDonita} />}
+                            icon={<Picture className={styles.picture} src={icon} />}
                             title={title}
                             description={description}
                             technologies={technologies}
