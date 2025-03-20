@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ItemNavBar } from '../../ui/ItemNavBar/ItemNavBar';
 import { HiMenu } from "react-icons/hi";
 
-export const NavBar = ({className}) => {
+export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   const styles = {
