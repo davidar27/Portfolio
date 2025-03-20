@@ -34,7 +34,8 @@ const redSocials = [
 
 export const Footer = () => {
     return (
-        <footer className="flex items-center justify-around p-4 bg-primary ">
+        <footer className="flex flex-col items-center justify-center gap-y-10 p-4 bg-primary">
+
 
             <a href="https://github.com/davidar27" target="_blank" rel="noopener noreferrer">
                 <Picture className={`${styles.picture} !h-16 !w-16`} src={MiImage} />
@@ -42,7 +43,7 @@ export const Footer = () => {
 
             <div>
                 <h2 className={`${styles.myTitle} !m-0 `}>MiPortafolio</h2>
-                <p className={`${styles.myDescription} !text-black`}>Concentrado, Tranquilo y Perseverante </p>
+                <p className={`${styles.myDescription} !text-white`}>Concentrado, Tranquilo y Perseverante </p>
             </div>
             <div className="flex gap-4">
                 {redSocials.map(({ label, url, icon }, index) => (

@@ -14,9 +14,19 @@ export const Column = ({
     technologies,
 }) => {
     return (
-        <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+        <motion.div
+            whileHover={{
+                scale: [null, 1, 1.1],
+                transition: {
+                    duration: 0.5,
+                    times: [0, 0.2, 1],
+                    ease: ["easeInOut", "easeOut"],
+                },
+            }}
+            transition={{
+                duration: 0.2,
+                ease: "easeOut",
+            }}
         >
             <div className={className}>
                 {icon && <div className={iconClassName}>{icon}</div>}
@@ -24,7 +34,7 @@ export const Column = ({
                 <p className={descriptionClassName}>{description}</p>
                 {technologies && (
                     <div className={technologiesClassName}>
-                        <ul>
+                        <ul className="list-disc">
                             {technologies.map((tech, index) => (
                                 <li key={index}>{tech}</li>
                             ))}
@@ -32,6 +42,6 @@ export const Column = ({
                     </div>
                 )}
             </div>
-        </motion.button>
+        </motion.div>
     );
 };

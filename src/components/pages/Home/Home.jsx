@@ -13,13 +13,6 @@ export const Home = () => {
   }
 
   const { name, description } = info;
-  const styles3 = {
-    section: "h-screen bg-[linear-gradient(to_bottom,#6e07f3_40%,white_40%)] p-30 flex flex-col items-center justify-center g-20 h-[80vh]",
-    h1: "text-white hover:text-black transition-colors duration-300 xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl",
-    p: "text-gray-800 hover:text-primary xl:text-xl lg:text-lg md:text-base sm:text-sm max-w-4xl mx-auto text-center break-words",
-    picture: "xl:w-64 xl:h-64 lg:w-56 lg:h-56 md:w-44 md:h-44 sm:w-36 sm:h-36 rounded-full",
-  };
-
 
   return (
     <section className={styles.mySection}>

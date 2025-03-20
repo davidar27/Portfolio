@@ -6,16 +6,16 @@ export const NavBar = ({className}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   const styles = {
-    myUl: `flex flex-col md:flex-row justify-around gap-4 md:gap-10 bg-white md:bg-transparent absolute md:static top-[10vh] left-0 w-full md:w-auto p-4 md:p-0 transition-all duration-300 ease-in-out ${
-      isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible md:opacity-100 md:visible"
+    myUl: `flex flex-col lg:flex-row list-disc justify-around xl:gap-10 lg:gap-8 md:gap-6 sm:gap-4 bg-white lg:bg-transparent absolute lg:static top-[10vh] left-0  text-center w-full lg:w-auto  transition-all duration-300 ease-in-out ${
+      isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible lg:opacity-100 lg:visible"
     }`,
-    menuButton: "md:hidden text-3xl text-gray-800 hover:text-blue-500 cursor-pointer transition-colors duration-300",
+    menuButton: "lg:hidden text-3xl text-gray-800 hover:text-blue-500 cursor-pointer transition-colors duration-300",
   };
 
   const { myUl, menuButton } = styles;
 
   return (
-    <nav className={className}>
+    <nav className="max-w-[70vw]">
       <HiMenu
         className={menuButton}
         onClick={() => setIsMenuOpen(!isMenuOpen)}

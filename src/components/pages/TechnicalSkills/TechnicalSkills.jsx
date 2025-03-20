@@ -25,14 +25,13 @@ export const TechnicalSkills = () => {
       delay: 0.5,
     },
   ];
-  
+
 
 
 
   return (
     <section className={styles.mySection}>
       <h2 className={styles.myTitle}>Habilidades Técnicas</h2>
-
       <div className={styles.myContainer}>
         {skills.map(({ icon, title, technologies, delay }, index) => (
           <motion.div

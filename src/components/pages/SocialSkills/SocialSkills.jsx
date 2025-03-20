@@ -64,7 +64,7 @@ export const SocialSkills = () =>  {
                         transition={{ duration: 0.5, delay }}
                     >
                         <Column
-                            className={`${styles.myColumn} !drop-shadow-xl `}
+                            className={`${styles.myColumn}`}
                             titleClassName={styles.myTitleColumn}
                             iconClassName={styles.myIcon}
                             technologiesClassName={styles.mytechnologies }
