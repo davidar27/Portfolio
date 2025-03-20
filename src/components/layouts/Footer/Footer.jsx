@@ -16,17 +16,17 @@ const redSocials = [
     },
     {
         label: "LinkedIn",
-        url: "https://www.linkedin.com/in/davidar27",
+        url: "https://www.linkedin.com/in/jhonatanarcos/",
         icon: <FaLinkedin />
     },
     {
         label: "Instagram",
-        url: "https://www.instagram.com/davidar27",
+        url: "https://www.instagram.com/david_ar2708",
         icon: <FaInstagram />
     },
     {
         label: "Correo Electrónico",
-        url: "mailto:davidar27@gmail.com",
+        url: "mailto:jhonatanarcos10@gmail.com",
         icon: <FaEnvelope />
     }
 ];
