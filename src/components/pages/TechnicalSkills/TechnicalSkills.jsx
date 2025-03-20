@@ -4,6 +4,7 @@ import { FaReact, FaNode, FaGithub } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import styles from '../../../styles';
+import { MainTitle } from "../../ui/MainTitle/MainTitle";
 
 export const TechnicalSkills = () => {
   const skills = [
@@ -11,12 +12,13 @@ export const TechnicalSkills = () => {
       icon: <FaReact />,
       title: "Desarrollador Frontend",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
+      delay: 0.3,
     },
     {
       icon: <FaNode />,
       title: "Desarrollador Backend",
       technologies: ["Node.js", "Express", "C#"],
-      delay: 0.3,
+      delay: 0.4,
     },
     {
       icon: <FaGithub />,
@@ -31,7 +33,7 @@ export const TechnicalSkills = () => {
 
   return (
     <section className={styles.mySection}>
-      <h2 className={styles.myTitle}>Habilidades Técnicas</h2>
+      <MainTitle title="Habilidades Tecnicas"/>
       <div className={styles.myContainer}>
         {skills.map(({ icon, title, technologies, delay }, index) => (
           <motion.div

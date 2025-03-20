@@ -11,6 +11,7 @@ import { FaLanguage } from "react-icons/fa";
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { MainTitle } from '../../ui/MainTitle/MainTitle';
 
 export const SocialSkills = () =>  {
     const SocialSkills = [
@@ -54,7 +55,7 @@ export const SocialSkills = () =>  {
     ];
     return (
         <section className={styles.mySection}>
-            <h1 className={styles.myTitle}>Habilidades Sociales</h1>
+            <MainTitle title="Habilidades Sociales"/>
             <div className={`${styles.myContainer} `}>
                 {SocialSkills.map(({ icon, title,description, delay }, index) => (
                     <motion.div

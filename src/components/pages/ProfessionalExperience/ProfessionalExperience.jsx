@@ -5,6 +5,7 @@ import IconDonita from '../../../assets/images/icon_donita.jpg'
 import { Picture } from '../../ui/Picture/Picture';
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { MainTitle } from '../../ui/MainTitle/MainTitle';
 
 
 export const ProfessionalExperience = () => {
@@ -19,14 +20,14 @@ export const ProfessionalExperience = () => {
 
     return (
         <section className={`${styles.mySection} bg-[linear-gradient(to_bottom_right,#6e07f3_50%,white_50%)]`}>
-            <h1 className={styles.myTitle}>Experiencia Laboral</h1>
+            <MainTitle title="Experiencia Laboral"/>
             <div className={styles.myContainer}>
                 {experiences.map(({ icon, title, description, technologies }, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         <Column
                             className={`${styles.myColumn} drop-shadow-xl`}
