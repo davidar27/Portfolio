@@ -1,8 +1,8 @@
 export const styles = {
     mySection: "min-h-screen bg-[linear-gradient(to_bottom,#6e07f3_50%,white_50%)] flex flex-col items-center justify-center gap-8 xl:p-32 md:p-3 md:pt-30 md:pb-20 p-12  ",
-    myTitle: "text-5xl font-bold text-center text-white",
-    myContainer: "min-h-90 w-auto  max-w-[80vw] flex flex-wrap gap-6 justify-center text-center bg-white bg-opacity-50 p-8  rounded-lg shadow-lg",
-    myColumn: "bg-white bg-opacity-50 p-4 rounded-lg drop-shadow-2xl flex flex-col items-center justify-center max-w-200 max-h-200 min-w-60 min-h-80 max-w-xs gap-4  border-primary ",
+    myTitle: "text-5xl xl:text-6xl font-bold text-center text-white",
+    myContainer: "min-h-90 w-auto  max-w-[90vw] flex flex-wrap gap-6 justify-center text-center bg-white bg-opacity-50 p-4  rounded-lg shadow-lg",
+    myColumn: "bg-white bg-opacity-50 p-4 rounded-lg drop-shadow-2xl flex flex-col items-center justify-center w-full max-w-xs min-w-60 min-h-80  gap-4",
     myIcon: "text-8xl text-primary",
     myTitleColumn: "text-3xl font-bold text-gray-700 break-words",
     mytechnologies: "list-disc text-2xl font-light text-gray-800 text-left break-words",

@@ -43,7 +43,7 @@ export const TechnicalSkills = () => {
             transition={{ duration: 0.5, delay }}
           >
             <Column
-              className={styles.myColumn}
+              className={`${styles.myColumn} h-100`}
               titleClassName={styles.myTitleColumn}
               iconClassName={styles.myIcon}
               technologiesClassName={styles.mytechnologies}

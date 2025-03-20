@@ -4,6 +4,7 @@ import styles from '../../../styles'
 import { motion } from 'framer-motion';
 import { Column } from '../../ui/Column/Column';
 import { FaCode, FaRobot, FaPython } from "react-icons/fa6";
+import { MainTitle } from '../../ui/MainTitle/MainTitle';
 
 
 export const Estudies = () => {
@@ -32,7 +33,7 @@ export const Estudies = () => {
     return (
 
         <section className={styles.mySection}>
-            <h2 className={styles.myTitle}>Habilidades Técnicas</h2>
+            <MainTitle title="Estudios"/>
 
             <div className={styles.myContainer}>
                 {estudies.map(({ icon, title, description, delay }, index) => (
