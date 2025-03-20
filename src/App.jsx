@@ -6,6 +6,7 @@ import { SocialSkills } from './components/pages/SocialSkills/SocialSkills';
 import { ProfessionalExperience } from './components/pages/ProfessionalExperience/ProfessionalExperience';
 import { Estudies } from './components/pages/Estudies/Estudies';
 import { Footer} from './components/layouts/Footer/Footer'
+import NotFoundPage from './components/pages/NotFoundPage/NotFoundPage';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path="/habsoc" element={<SocialSkills />} />
         <Route path="/expro" element={<ProfessionalExperience />}/>
         <Route path="/est" element={<Estudies />}/>
-       
+        <Route path="*" element={<NotFoundPage />}/>
+
       </Routes>
       <Footer/>
     </div>
