@@ -37,7 +37,7 @@ export const Footer = () => {
         <footer className="flex flex-col items-center justify-center gap-y-10 p-4 bg-primary">
 
 
-            <a href="https://github.com/davidar27" target="_blank" rel="noopener noreferrer">
+            <a href="/">
                 <Picture className={`${styles.picture} !h-16 !w-16`} src={MiImage} />
             </a>
 
