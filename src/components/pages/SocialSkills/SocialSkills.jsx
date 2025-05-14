@@ -49,7 +49,7 @@ export const SocialSkills = () =>  {
         {
             icon: <FaLanguage />,
             title: "Nivel de Ingles",
-            description: ["B2"],
+            description: ["B1"],
             delay: 0.5
         }
     ];
