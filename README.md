@@ -1,12 +1,55 @@
-# React + Vite
+# Portafolio Personal - Jhonatan David Arcos Dominguez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción 📝
+Portafolio profesional desarrollado con React y TailwindCSS que muestra mis habilidades, experiencia y proyectos como Desarrollador Full Stack. El diseño es moderno, responsive e incluye animaciones interactivas.
 
-Currently, two official plugins are available:
+## Características principales ✨
+- **Diseño responsive** que se adapta a todos los dispositivos
+- **Animaciones fluidas** con Framer Motion
+- **Navegación intuitiva** con React Router
+- **Estilos personalizados** con TailwindCSS
+- **Organización modular** de componentes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías utilizadas 🛠️
+### Frontend
+- React 18
+- TailwindCSS 3
+- Framer Motion (para animaciones)
+- React Icons
+- Vite (como build tool)
 
-## Expanding the ESLint configuration
+### Backend (si aplica)
+- Node.js
+- Express
+- MySQL
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estructura del proyecto 📂
+```
+src/
+├── assets/
+│   └── images/       # Imágenes y SVG
+├── components/
+│   ├── layouts/      # Componentes estructurales
+│   ├── pages/        # Páginas principales
+│   └── ui/           # Componentes reutilizables
+├── styles/           # Estilos personalizados
+└── App.jsx           # Configuración principal
+```
+
+## Componentes destacados 🏗️
+- **NavBar**: Menú responsive con animaciones
+- **Home**: Presentación personal con animaciones
+- **TechnicalSkills**: Muestra habilidades técnicas organizadas
+- **ProfessionalExperience**: Experiencia laboral detallada
+- **Footer**: Redes sociales y contacto
+
+
+
+## Personalización 🎨
+Para personalizar el proyecto:
+1. Modifica los colores en `tailwind.config.js`
+2. Actualiza la información en los componentes de `pages/`
+3. Cambia las imágenes en `assets/images/`
+
+## Licencia 📄
+Este proyecto está bajo la licencia MIT.
