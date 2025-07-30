@@ -18,11 +18,6 @@ Portafolio profesional desarrollado con React y TailwindCSS que muestra mis habi
 - React Icons
 - Vite
 
-### Backend
-- Node.js
-- Express
-- MySQL
-
 ## Estructura del proyecto 📂
 ```
 src/
