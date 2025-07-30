@@ -14,11 +14,11 @@ Portafolio profesional desarrollado con React y TailwindCSS que muestra mis habi
 ### Frontend
 - React 18
 - TailwindCSS 3
-- Framer Motion (para animaciones)
+- Framer Motion
 - React Icons
-- Vite (como build tool)
+- Vite
 
-### Backend (si aplica)
+### Backend
 - Node.js
 - Express
 - MySQL
