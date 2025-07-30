@@ -13,16 +13,16 @@ export const GlassCard: React.FC<GlassCardProps> = ({
     children,
     className = "",
     delay = 0,
-    whileHover = { scale: 1.02 },
-    whileTap = { scale: 0.98 }
+    whileHover = { scale: 1.01 },
+    whileTap = { scale: 0.99 }
 }) => {
     return (
         <motion.div
-            className={`bg-gradient-to-br from-[rgba(110,7,243,0.1)] to-[rgba(153,69,255,0.05)] backdrop-blur-[25px] border border-[rgba(255,255,255,0.15)] p-6 rounded-xl shadow-xl hover:border-[rgba(255,255,255,0.25)] transition-all duration-300 ${className}`}
-            initial={{ opacity: 0, y: 50 }}
+            className={`glass-card-optimized ${className}`}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay }}
+            viewport={{ once: true, margin: "-50px" }}
             whileHover={whileHover}
             whileTap={whileTap}
         >

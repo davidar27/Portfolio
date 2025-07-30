@@ -65,7 +65,7 @@ body {
     }
 }
 
-/* Clases utilitarias para glassmorfismo */
+/* Clases utilitarias para glassmorfismo optimizadas */
 .glass-effect {
     background: rgba(110, 7, 243, 0.1);
     backdrop-filter: blur(20px);
@@ -77,6 +77,24 @@ body {
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Clase optimizada para mejor rendimiento */
+.glass-card-optimized {
+    background: rgba(110, 7, 243, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+.glass-card-optimized:hover {
+    background: rgba(110, 7, 243, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Efectos de hover mejorados */
@@ -94,4 +112,23 @@ body {
 ::-moz-selection {
     background: rgba(110, 7, 243, 0.3);
     color: white;
+}
+
+/* Optimizaciones de rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Optimización para dispositivos con GPU débil */
+@media (max-width: 768px) {
+    .glass-card-optimized {
+        backdrop-filter: none;
+        background: rgba(110, 7, 243, 0.15);
+    }
 }

@@ -27,19 +27,21 @@ export const Section = memo<SectionProps>(({
             className={`min-h-screen flex flex-col items-center justify-center gap-8 p-8 xl:p-32 md:p-16 md:pt-20 md:pb-20 ${backgroundGradient} ${className} relative overflow-hidden`}
         >
             {showParticles && (
-                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(110,7,243,0.03)] to-[rgba(153,69,255,0.01)]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(110,7,243,0.02)] to-[rgba(153,69,255,0.01)]"></div>
             )}
 
             <motion.div
                 className="relative z-10 w-full"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                viewport={{ once: true, margin: "-100px" }}
             >
-                <h2 className="text-5xl xl:text-6xl font-bold text-center bg-gradient-to-r from-[#6e07f3] to-[#9945ff] bg-clip-text text-transparent mb-8">
-                    {title}
-                </h2>
+                {title && (
+                    <h2 className="text-5xl xl:text-6xl font-bold text-center bg-gradient-to-r from-[#6e07f3] to-[#9945ff] bg-clip-text text-transparent mb-8">
+                        {title}
+                    </h2>
+                )}
                 {children}
             </motion.div>
         </section>
