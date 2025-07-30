@@ -15,7 +15,7 @@ export const NavBar: React.FC<NavBar> = ({ onNavigate }) => {
         { id: 'home', text: 'Inicio' },
         { id: 'technical', text: 'Habilidades Técnicas' },
         { id: 'social', text: 'Habilidades Sociales' },
-        { id: 'experience', text: 'Experiencia' },
+        { id: 'projects', text: 'Proyectos' },
         { id: 'studies', text: 'Estudios' },
         { id: 'contact', text: 'Contacto' }
     ];

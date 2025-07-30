@@ -9,7 +9,6 @@ import ProjectsSection from '@/components/pages/ProjectsSection/ProjectsSection'
 import StudiesSection from '@/components/pages/StudiesSection/StudiesSection';
 import ContactSection from '@/components/pages/ContactSection/ContactSection';
 
-
 export const LandingPage: React.FC = memo(() => {
     const { sectionRefs, scrollToSection } = useScrollNavigation();
 
@@ -17,17 +16,15 @@ export const LandingPage: React.FC = memo(() => {
         <div className="landing-page">
             <Header onNavigate={scrollToSection} />
 
-            {/* Hero Section */}
             <Section
                 id="home"
                 ref={sectionRefs.home}
                 title=""
                 showParticles={true}
             >
-                <HeroSection />
+                <HeroSection onNavigate={scrollToSection} />
             </Section>
 
-            {/* Technical Skills Section */}
             <Section
                 id="technical"
                 ref={sectionRefs.technical}
@@ -37,7 +34,6 @@ export const LandingPage: React.FC = memo(() => {
                 <TechnicalSkillsSection />
             </Section>
 
-            {/* Social Skills Section */}
             <Section
                 id="social"
                 ref={sectionRefs.social}
@@ -46,10 +42,9 @@ export const LandingPage: React.FC = memo(() => {
                 <SocialSkillsSection />
             </Section>
 
-            {/* Projects Section */}
             <Section
-                id="experience"
-                ref={sectionRefs.experience}
+                id="projects"
+                ref={sectionRefs.projects}
                 title="Proyectos Destacados"
                 backgroundGradient="bg-gradient-to-br from-[#16213e] via-[#1a1a2e] to-[#0a0a0f]"
                 showParticles={true}
@@ -57,7 +52,6 @@ export const LandingPage: React.FC = memo(() => {
                 <ProjectsSection />
             </Section>
 
-            {/* Studies Section */}
             <Section
                 id="studies"
                 ref={sectionRefs.studies}
@@ -67,7 +61,6 @@ export const LandingPage: React.FC = memo(() => {
                 <StudiesSection />
             </Section>
 
-            {/* Contact Section */}
             <Section
                 id="contact"
                 ref={sectionRefs.contact}
@@ -75,8 +68,10 @@ export const LandingPage: React.FC = memo(() => {
                 backgroundGradient="bg-gradient-to-br from-[#0a0a0f] via-[#1a1a2e] to-[#16213e]"
                 showParticles={true}
             >
-                <ContactSection />
+                <ContactSection onNavigate={scrollToSection} />
             </Section>
         </div>
     );
 });
+
+export default LandingPage;

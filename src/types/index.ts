@@ -61,7 +61,7 @@ export interface SectionRefs {
     home: React.RefObject<HTMLElement>;
     technical: React.RefObject<HTMLElement>;
     social: React.RefObject<HTMLElement>;
-    experience: React.RefObject<HTMLElement>;
+    projects: React.RefObject<HTMLElement>;
     studies: React.RefObject<HTMLElement>;
     contact: React.RefObject<HTMLElement>;
 }

@@ -9,7 +9,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'home', text: 'Inicio' },
   { id: 'technical', text: 'Habilidades Técnicas' },
   { id: 'social', text: 'Habilidades Sociales' },
-  { id: 'experience', text: 'Proyectos' },
+  { id: 'projects', text: 'Proyectos' },
   { id: 'studies', text: 'Estudios' },
   { id: 'contact', text: 'Contacto' }
 ];
@@ -55,7 +55,6 @@ export const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
     <nav className={styles.nav}>
       <div className={styles.container}>
         <div className={styles.navContent}>
-          {/* Logo */}
           <motion.h1 
             className={styles.logo}
             initial={{ opacity: 0, x: -20 }}
@@ -67,7 +66,6 @@ export const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
             Mi Portafolio
           </motion.h1>
 
-          {/* Desktop Menu */}
           <div className={styles.desktopMenu}>
             {NAV_ITEMS.map((item, index) => (
               <motion.div
@@ -86,7 +84,6 @@ export const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <motion.button
             className={styles.menuButton}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -97,7 +94,6 @@ export const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
           </motion.button>
         </div>
 
-        {/* Mobile Menu */}
         <div className={styles.mobileMenu}>
           <div className="py-2">
             {NAV_ITEMS.map((item) => (

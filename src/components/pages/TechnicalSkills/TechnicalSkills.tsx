@@ -1,25 +1,9 @@
 import { memo } from "react";
 import { PortfolioDataService } from "@/services/portfolioData";
-import styles from "@/styles";
-import { GlassCard } from "@/components/ui/GlassCard/GlassCard";
-import { Column } from "@/components/ui/Column/Column";
 import { Carousel } from "@/components/ui/Carousel/Carousel";
+import TechnicalSkillCard from "@/components/ui/TechnicalSkillCard/TechnicalSkillCard";
 
-const TechnicalSkillCard = memo(({ skill, index }: { skill: any; index: number }) => (
-    <GlassCard key={index} delay={skill.delay} className="w-97">
-        <Column
-            className="h-100"
-            titleClassName={styles.myTitleColumn}
-            iconClassName={styles.myIcon}
-            technologiesClassName={styles.mytechnologies}
-            icon={skill.icon}
-            title={skill.title}
-            technologies={skill.technologies}
-        />
-    </GlassCard>
-));
 
-TechnicalSkillCard.displayName = 'TechnicalSkillCard';
 
 const TechnicalSkillsSection = memo(() => {
     const technicalSkills = PortfolioDataService.getTechnicalSkills();

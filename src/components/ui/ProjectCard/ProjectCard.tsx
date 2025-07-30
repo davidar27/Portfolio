@@ -1,20 +1,33 @@
-import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { memo } from "react";
 import { GlassCard } from "@/components/ui/GlassCard/GlassCard";
 import { Picture } from "@/components/ui/Picture/Picture";
-import { memo } from "react";
+import { motion } from "framer-motion";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
-const ProjectCard = memo(({ project, index }: { project: any; index: number }) => (
+interface ProjectCardProps {
+    project: {
+        icon: string;
+        title: string;
+        description: string;
+        technologies: string[];
+        projectUrl?: string;
+        githubUrl?: string;
+    };
+    index: number;
+}
+
+const ProjectCard = memo(({ project, index }: ProjectCardProps) => (
     <GlassCard delay={0.3 + index * 0.1} className="w-97">
         <div className="flex flex-col items-center justify-center gap-4 w-full h-full p-6">
             <div className="relative mb-4">
                 <Picture 
-                    className="w-24 h-24 rounded-xl object-cover border-2 border-[rgba(110,7,243,0.3)]" 
-                    src={project.icon} 
+                    className="w-24 h-24 rounded-xl object-cover object-center border-2 border-[rgba(110,7,243,0.3)]"
+                    src={project.icon}
                 />
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#6e07f3] to-[#9945ff] opacity-20 blur-lg"></div>
             </div>
 
+            {/* Título */}
             <h3 className="card-title text-center">
                 {project.title}
             </h3>

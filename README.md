@@ -133,6 +133,7 @@ src/
 │   └── ui/                   # Componentes reutilizables
 │       ├── Carousel/         # Carrusel inteligente
 │       ├── GlassCard/        # Tarjeta con efecto glassmorfismo
+│       ├── ProjectCard/      # Tarjeta de proyecto
 │       ├── ButtonIcon/       # Botón con icono
 │       ├── Column/           # Columna de contenido
 │       ├── MainTitle/        # Título principal
@@ -228,6 +229,222 @@ El carrusel se activa automáticamente cuando hay más de 3 elementos. Puedes pe
 2. Agrega la referencia correspondiente en `useScrollNavigation`
 3. Actualiza la navegación en `Header.tsx`
 4. Define los tipos necesarios en `src/types/index.ts`
+
+## 🔗 Implementación del Hook useScrollNavigation
+
+### ¿Qué hace el hook?
+
+El hook `useScrollNavigation` es responsable de:
+- **Gestionar referencias**: Crear y mantener referencias a todas las secciones
+- **Navegación suave**: Proporcionar función para scroll suave entre secciones
+- **Optimización**: Usar `useMemo` y `useCallback` para mejor rendimiento
+
+### Estructura del Hook
+
+```typescript
+// src/hooks/useScrollNavigation.ts
+import { useRef, useCallback, useMemo } from 'react';
+
+interface SectionRefs {
+    home: React.RefObject<HTMLElement | null>;
+    technical: React.RefObject<HTMLElement | null>;
+    social: React.RefObject<HTMLElement | null>;
+    projects: React.RefObject<HTMLElement | null>;
+    studies: React.RefObject<HTMLElement | null>;
+    contact: React.RefObject<HTMLElement | null>;
+}
+
+export const useScrollNavigation = () => {
+    // 1. Crear referencias para cada sección
+    const homeRef = useRef<HTMLElement>(null);
+    const technicalRef = useRef<HTMLElement>(null);
+    const socialRef = useRef<HTMLElement>(null);
+    const projectsRef = useRef<HTMLElement>(null);
+    const studiesRef = useRef<HTMLElement>(null);
+    const contactRef = useRef<HTMLElement>(null);
+
+    // 2. Agrupar referencias en un objeto memoizado
+    const sectionRefs: SectionRefs = useMemo(() => ({
+        home: homeRef,
+        technical: technicalRef,
+        social: socialRef,
+        projects: projectsRef,
+        studies: studiesRef,
+        contact: contactRef
+    }), []);
+
+    // 3. Función de navegación optimizada
+    const scrollToSection = useCallback((sectionId: string): void => {
+        const ref = sectionRefs[sectionId as keyof SectionRefs];
+        if (ref?.current) {
+            ref.current.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }, [sectionRefs]);
+
+    return {
+        sectionRefs,
+        scrollToSection
+    };
+};
+```
+
+### Cómo usar el Hook
+
+#### 1. En el componente principal (LandingPage)
+
+```typescript
+import { useScrollNavigation } from '@/hooks/useScrollNavigation';
+
+export const LandingPage: React.FC = memo(() => {
+    const { sectionRefs, scrollToSection } = useScrollNavigation();
+
+    return (
+        <div className="landing-page">
+            {/* Pasar la función de navegación al Header */}
+            <Header onNavigate={scrollToSection} />
+
+            {/* Asignar referencias a cada sección */}
+            <Section
+                id="home"
+                ref={sectionRefs.home}
+                title=""
+            >
+                <HeroSection onNavigate={scrollToSection} />
+            </Section>
+
+            <Section
+                id="technical"
+                ref={sectionRefs.technical}
+                title="Habilidades Técnicas"
+            >
+                <TechnicalSkillsSection />
+            </Section>
+
+            {/* ... más secciones */}
+        </div>
+    );
+});
+```
+
+#### 2. En el Header (Navegación)
+
+```typescript
+interface NavigationProps {
+    onNavigate: (sectionId: string) => void;
+}
+
+export const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
+    const handleNavClick = (sectionId: string): void => {
+        onNavigate(sectionId);
+    };
+
+    return (
+        <nav>
+            <button onClick={() => handleNavClick('home')}>Inicio</button>
+            <button onClick={() => handleNavClick('technical')}>Habilidades</button>
+            <button onClick={() => handleNavClick('projects')}>Proyectos</button>
+            {/* ... más botones */}
+        </nav>
+    );
+};
+```
+
+#### 3. En componentes internos (HeroSection)
+
+```typescript
+interface HeroSectionProps {
+    onNavigate?: (sectionId: string) => void;
+}
+
+const HeroSection = memo(({ onNavigate }: HeroSectionProps) => {
+    const handleViewSkills = () => {
+        if (onNavigate) {
+            onNavigate('technical');
+        }
+    };
+
+    const handleViewProjects = () => {
+        if (onNavigate) {
+            onNavigate('projects');
+        }
+    };
+
+    return (
+        <div>
+            <button onClick={handleViewSkills}>Ver Habilidades</button>
+            <button onClick={handleViewProjects}>Ver Proyectos</button>
+        </div>
+    );
+});
+```
+
+### Ventajas del Hook
+
+#### **1. Reutilización**
+- Un solo hook para toda la navegación
+- Fácil de usar en cualquier componente
+- Consistencia en toda la aplicación
+
+#### **2. Optimización**
+- `useMemo` para referencias estables
+- `useCallback` para función de navegación
+- Evita re-renders innecesarios
+
+#### **3. TypeScript**
+- Tipado completo para referencias
+- Autocompletado en el IDE
+- Detección de errores en tiempo de compilación
+
+#### **4. Flexibilidad**
+- Fácil agregar nuevas secciones
+- Configuración de scroll personalizable
+- Compatible con diferentes navegadores
+
+### Agregar Nueva Sección
+
+Para agregar una nueva sección:
+
+1. **Actualizar la interfaz**:
+```typescript
+interface SectionRefs {
+    // ... secciones existentes
+    nuevaSeccion: React.RefObject<HTMLElement | null>;
+}
+```
+
+2. **Crear la referencia**:
+```typescript
+const nuevaSeccionRef = useRef<HTMLElement>(null);
+```
+
+3. **Agregar al objeto de referencias**:
+```typescript
+const sectionRefs: SectionRefs = useMemo(() => ({
+    // ... referencias existentes
+    nuevaSeccion: nuevaSeccionRef
+}), []);
+```
+
+4. **Usar en el componente**:
+```typescript
+<Section
+    id="nuevaSeccion"
+    ref={sectionRefs.nuevaSeccion}
+    title="Nueva Sección"
+>
+    <NuevaSeccionComponent />
+</Section>
+```
+
+5. **Agregar a la navegación**:
+```typescript
+<button onClick={() => onNavigate('nuevaSeccion')}>
+    Nueva Sección
+</button>
+```
 
 ## 📱 Responsive Design
 

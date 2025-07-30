@@ -42,7 +42,7 @@ export class PortfolioDataService {
             {
                 icon: React.createElement(FaRobot),
                 title: "Automatización",
-                technologies: ["RPA", "Pix RTA"],
+                technologies: ["RPA", "Pix RPA"],
                 delay: 0.7,
             }
         ];
@@ -97,7 +97,7 @@ export class PortfolioDataService {
                 description: "Plataforma de comercio electrónico especializada en productos de la India. Sistema completo de gestión de productos, paquetes, usuarios y transacciones.",
                 technologies: ["React", "Node.js", "SQL", "MercadoPago"],
                 projectUrl: "https://tesoros-india.vercel.app",
-                githubUrl: "https://github.com/davidar27/tesoros-india"
+                githubUrl: "https://github.com/davidar27/FrontedTesorosIndia"
             },
             // {
             //     icon: "https://i.postimg.cc/7hnkZ8Cs/icon-donita.jpg",
