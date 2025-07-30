@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 interface ColumnProps {
     className?: string;
@@ -25,34 +24,58 @@ export const Column: React.FC<ColumnProps> = ({
     technologies,
 }) => {
     return (
-        <motion.div
-            whileHover={{
-                scale: [null, 1, 1.1],
-                transition: {
-                    duration: 0.5,
-                    times: [0, 0.2, 1],
-                    ease: ["easeInOut", "easeOut"],
-                },
-            }}
-            transition={{
-                duration: 0.2,
-                ease: "easeOut",
-            }}
-        >
-            <div className={className}>
-                {icon && <div className={iconClassName}>{icon}</div>}
-                <h1 className={titleClassName}>{title}</h1>
-                <p className={descriptionClassName}>{description}</p>
-                {technologies && (
-                    <div className={technologiesClassName}>
-                        <ul className="list-disc">
-                            {technologies.map((tech, index) => (
-                                <li key={index}>{tech}</li>
+        <div className={`flex flex-col items-center justify-center gap-4 w-full h-full p-6 ${className}`}>
+            {/* Icon Container */}
+            {icon && (
+                <div className={`card-icon-container ${iconClassName}`}>
+                    <div className="text-4xl text-[#6e07f3]">
+                        {icon}
+                    </div>
+                </div>
+            )}
+            
+            {/* Title */}
+            {title && (
+                <h3 className={`card-title ${titleClassName}`}>
+                    {title}
+                </h3>
+            )}
+            
+            {/* Description */}
+            {description && (
+                <div className={`card-description ${descriptionClassName}`}>
+                    {Array.isArray(description) ? (
+                        <ul className="space-y-1">
+                            {description.map((item, index) => (
+                                <li key={index} className="text-[#b366ff] font-medium">
+                                    {item}
+                                </li>
                             ))}
                         </ul>
+                    ) : (
+                        <p>{description}</p>
+                    )}
+                </div>
+            )}
+            
+            {/* Technologies */}
+            {technologies && technologies.length > 0 && (
+                <div className={`card-technologies ${technologiesClassName}`}>
+                    <h4 className="text-sm font-semibold text-[#b366ff] mb-2 text-center w-full">
+                        Tecnologías:
+                    </h4>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                        {technologies.map((tech, index) => (
+                            <span
+                                key={index}
+                                className="tech-tag"
+                            >
+                                {tech}
+                            </span>
+                        ))}
                     </div>
-                )}
-            </div>
-        </motion.div>
+                </div>
+            )}
+        </div>
     );
 }; 

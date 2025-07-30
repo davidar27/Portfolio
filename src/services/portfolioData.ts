@@ -1,4 +1,4 @@
-import { TechnicalSkill, SocialSkill, Experience, Study, PersonalInfo, SocialLink } from '@/types';
+import { TechnicalSkill, SocialSkill, Project, Study, PersonalInfo, SocialLink } from '@/types';
 import React from 'react';
 import { FaReact, FaNode, FaGithub, FaCode, FaRobot, FaPython } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa";
@@ -9,7 +9,6 @@ import { BiSolidUserDetail } from "react-icons/bi";
 import { FaLanguage } from "react-icons/fa";
 import { FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import MiImage from '@/assets/images/avatar.svg';
-import IconDonita from '@/assets/images/icon_donita.jpg';
 
 export class PortfolioDataService {
     static getPersonalInfo(): PersonalInfo {
@@ -31,15 +30,21 @@ export class PortfolioDataService {
             {
                 icon: React.createElement(FaNode),
                 title: "Desarrollador Backend",
-                technologies: ["Node.js", "Express", "C#"],
+                technologies: ["Node.js", "Express", "C#", "Java", "SQL", "SQLServer"],
                 delay: 0.4,
             },
             {
                 icon: React.createElement(FaGithub),
                 title: "Control de Versiones & Despliegue",
-                technologies: ["Git", "GitHub", "Clever Cloud"],
+                technologies: ["Git", "GitHub", "Clever Cloud", "Vercel", "Railway", "Azure", "Render"],
                 delay: 0.5,
             },
+            {
+                icon: React.createElement(FaRobot),
+                title: "Automatización",
+                technologies: ["RPA", "Pix RTA"],
+                delay: 0.7,
+            }
         ];
     }
 
@@ -84,14 +89,25 @@ export class PortfolioDataService {
         ];
     }
 
-    static getExperiences(): Experience[] {
+    static getProjects(): Project[] {
         return [
             {
-                icon: IconDonita,
-                title: "Desarrollo Backend - Tienda de Mini Donas",
-                description: "Implementación de autenticación, carrito de compras y gestión de productos.",
-                technologies: ["TypeScript", "Express", "MySQL", "JWT"],
+                icon: "https://i.postimg.cc/YSQp2Kmn/logotesorosindia.png",
+                title: "Tesoros de India - E-commerce - Proyecto Comunitario",
+                description: "Plataforma de comercio electrónico especializada en productos de la India. Sistema completo de gestión de productos, paquetes, usuarios y transacciones.",
+                technologies: ["React", "Node.js", "SQL", "MercadoPago"],
+                projectUrl: "https://tesoros-india.vercel.app",
+                githubUrl: "https://github.com/davidar27/tesoros-india"
             },
+            // {
+            //     icon: "https://i.postimg.cc/7hnkZ8Cs/icon-donita.jpg",
+            //     title: "Tienda de Mini Donas - Proyecto Personal",
+            //     description: "Desarrollo completo de una aplicación web para una tienda real de mini donas. Implementación de autenticación, carrito de compras y gestión de productos.",
+            //     technologies: ["TypeScript", "Express", "MySQL", "JWT"],
+            //     projectUrl: "https://tienda-mini-donas.vercel.app",
+            //     githubUrl: "https://github.com/davidar27/tienda-mini-donas"
+            // },
+            
         ];
     }
 
@@ -105,15 +121,9 @@ export class PortfolioDataService {
             },
             {
                 icon: React.createElement(FaRobot),
-                title: "Pix RTA Basic y Microservicios",
+                title: "Pix RTA",
                 description: "PIX RPA",
                 delay: 0.4
-            },
-            {
-                icon: React.createElement(FaPython),
-                title: "Fundamentos de Python 1",
-                description: "Cisco",
-                delay: 0.5
             }
         ];
     }

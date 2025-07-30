@@ -2,12 +2,12 @@ import React, { memo } from 'react';
 import { Header } from '@/components/layouts/Header/Header';
 import { Section } from '@/components/sections/Section';
 import { useScrollNavigation } from '@/hooks/useScrollNavigation';
-import HeroSection from '@/components/pages/Home/Home';
+import HeroSection from '@/components/pages/HeroSection/HeroSection';
 import TechnicalSkillsSection from '@/components/pages/TechnicalSkills/TechnicalSkills';
 import SocialSkillsSection from '@/components/pages/SocialSkills/SocialSkills';
-import ExperienceSection from '@/components/pages/ExperienceSection/ExperienceSection';
-import StudiesSection from '@/components/pages/Estudies/Estudies';
-import ContactSection from '../Contact/ContactSection';
+import ProjectsSection from '@/components/pages/ProjectsSection/ProjectsSection';
+import StudiesSection from '@/components/pages/StudiesSection/StudiesSection';
+import ContactSection from '@/components/pages/ContactSection/ContactSection';
 
 
 export const LandingPage: React.FC = memo(() => {
@@ -46,15 +46,15 @@ export const LandingPage: React.FC = memo(() => {
                 <SocialSkillsSection />
             </Section>
 
-            {/* Professional Experience Section */}
+            {/* Projects Section */}
             <Section
                 id="experience"
                 ref={sectionRefs.experience}
-                title="Experiencia Laboral"
+                title="Proyectos Destacados"
                 backgroundGradient="bg-gradient-to-br from-[#16213e] via-[#1a1a2e] to-[#0a0a0f]"
                 showParticles={true}
             >
-                <ExperienceSection />
+                <ProjectsSection />
             </Section>
 
             {/* Studies Section */}
@@ -80,4 +80,3 @@ export const LandingPage: React.FC = memo(() => {
         </div>
     );
 });
-

@@ -5,26 +5,25 @@ import { GlassCard } from "@/components/ui/GlassCard/GlassCard";
 import { Column } from "@/components/ui/Column/Column";
 import { Carousel } from "@/components/ui/Carousel/Carousel";
 
-const SocialSkillCard = memo(({ skill, index }: { skill: any; index: number }) => (
-    <GlassCard key={index} delay={skill.delay} className="w-97">
+const StudyCard = memo(({ study, index }: { study: any; index: number }) => (
+    <GlassCard key={index} delay={study.delay} className="w-97">
         <Column
-            titleClassName={styles.myTitleColumn}
+            icon={study.icon}
             iconClassName={styles.myIcon}
-            technologiesClassName={styles.mytechnologies}
-            icon={skill.icon}
-            title={skill.title}
-            description={skill.description}
+            titleClassName={styles.myTitleColumn}
+            title={study.title}
+            description={study.description}
         />
     </GlassCard>
 ));
 
-SocialSkillCard.displayName = 'SocialSkillCard';
+StudyCard.displayName = 'StudyCard';
 
-const SocialSkillsSection = memo(() => {
-    const socialSkills = PortfolioDataService.getSocialSkills();
+const StudiesSection = memo(() => {
+    const studies = PortfolioDataService.getStudies();
 
-    const skillCards = socialSkills.map((skill, index) => (
-        <SocialSkillCard key={index} skill={skill} index={index} />
+    const studyCards = studies.map((study, index) => (
+        <StudyCard key={index} study={study} index={index} />
     ));
 
     return (
@@ -36,10 +35,10 @@ const SocialSkillsSection = memo(() => {
                 autoPlay={false}
                 className="max-w-7xl mx-auto"
             >
-                {skillCards}
+                {studyCards}
             </Carousel>
         </div>
     );
 });
 
-export default SocialSkillsSection;
+export default StudiesSection;

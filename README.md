@@ -13,11 +13,14 @@ Un portfolio personal moderno y atractivo desarrollado como una landing page de 
 - **Paleta de Colores**: Basada en #6e07f3 con efectos glassmorfismo
 - **Principios SOLID**: Arquitectura limpia y mantenible
 - **Optimización de Rendimiento**: Componentes memoizados y lazy loading
+- **Carrusel Inteligente**: Navegación automática cuando hay más de 3 elementos
+- **Proyectos con URLs**: Imágenes de proyectos cargadas desde URLs externas
+- **Enlaces Directos**: Acceso directo a demos en vivo y repositorios
 - **Secciones Incluidas**:
   - Hero Section con información personal
   - Habilidades Técnicas
   - Habilidades Sociales
-  - Experiencia Profesional
+  - Proyectos Destacados
   - Estudios
   - Contacto
 
@@ -37,11 +40,13 @@ Un portfolio personal moderno y atractivo desarrollado como una landing page de 
 - **Hooks personalizados**: `useScrollNavigation`, `useScrollHeader`
 - **Servicios**: `PortfolioDataService` para manejo de datos
 - **Componentes especializados**: Cada componente tiene una responsabilidad única
+- **Carrusel reutilizable**: Componente independiente para navegación
 
 ### **O - Open/Closed Principle (OCP)**
 - **Interfaces extensibles**: Tipos base que permiten extensión
 - **Componentes configurables**: Props que permiten personalización sin modificar código
 - **Servicios modulares**: Fácil agregar nuevos tipos de datos
+- **Carrusel configurable**: Múltiples opciones de personalización
 
 ### **L - Liskov Substitution Principle (LSP)**
 - **Interfaces coherentes**: `BaseSkill` extendida por `TechnicalSkill` y `SocialSkill`
@@ -55,7 +60,7 @@ Un portfolio personal moderno y atractivo desarrollado como una landing page de 
 
 ### **D - Dependency Inversion Principle (DIP)**
 - **Inyección de dependencias**: Hooks y servicios inyectados
-- **Componentes reutilizables**: `GlassCard`, `Section`
+- **Componentes reutilizables**: `GlassCard`, `Section`, `Carousel`
 - **Abstracciones**: Interfaces que definen contratos claros
 
 ## ⚡ Optimizaciones de Rendimiento
@@ -63,22 +68,26 @@ Un portfolio personal moderno y atractivo desarrollado como una landing page de 
 ### **React.memo**
 - Componentes memoizados para evitar re-renders innecesarios
 - `HeroSection`, `TechnicalSkillsSection`, `SocialSkillsSection`
-- `ExperienceSection`, `StudiesSection`, `ContactSection`
+- `ProjectsSection`, `StudiesSection`, `ContactSection`
+- `Carousel` y componentes de tarjetas
 
 ### **useMemo y useCallback**
 - `useMemo` para referencias de secciones
 - `useCallback` para funciones de navegación
 - Optimización de dependencias en useEffect
+- Cálculos de carrusel optimizados
 
 ### **Lazy Loading**
 - Componentes cargados bajo demanda
 - Animaciones optimizadas con `viewport={{ once: true }}`
 - Event listeners pasivos para scroll
+- Carrusel con carga progresiva
 
 ### **Optimizaciones CSS**
 - Clases utilitarias reutilizables
 - Efectos glassmorfismo optimizados
 - Transiciones CSS en lugar de JavaScript cuando es posible
+- Animaciones de carrusel optimizadas
 
 ## 🎨 Paleta de Colores Glassmorfismo
 
@@ -113,10 +122,16 @@ src/
 │   │   ├── Header/           # Navegación con glassmorfismo
 │   │   └── Footer/           # Pie de página glassmorfismo
 │   ├── pages/
-│   │   └── LandingPage/      # Componente principal
+│   │   ├── HeroSection/      # Sección principal
+│   │   ├── TechnicalSkills/  # Habilidades técnicas
+│   │   ├── SocialSkills/     # Habilidades sociales
+│   │   ├── ProjectsSection/  # Proyectos destacados
+│   │   ├── StudiesSection/   # Estudios
+│   │   └── ContactSection/   # Contacto
 │   ├── sections/
 │   │   └── Section.tsx       # Componente de sección reutilizable
 │   └── ui/                   # Componentes reutilizables
+│       ├── Carousel/         # Carrusel inteligente
 │       ├── GlassCard/        # Tarjeta con efecto glassmorfismo
 │       ├── ButtonIcon/       # Botón con icono
 │       ├── Column/           # Columna de contenido
@@ -169,9 +184,39 @@ src/
 Edita el archivo `src/services/portfolioData.ts` para modificar:
 - Nombre y descripción personal
 - Habilidades técnicas y sociales
-- Experiencia laboral
+- Proyectos destacados (con URLs de imágenes)
 - Estudios
 - Enlaces de redes sociales
+
+### Agregar Nuevos Proyectos
+Para agregar un nuevo proyecto, edita `src/services/portfolioData.ts`:
+
+```typescript
+{
+  icon: "https://tu-url-de-imagen.com/imagen.png",
+  title: "Nombre del Proyecto",
+  description: "Descripción detallada del proyecto",
+  technologies: ["React", "Node.js", "MongoDB"],
+  projectUrl: "https://demo-del-proyecto.com", // Opcional
+  githubUrl: "https://github.com/usuario/repositorio" // Opcional
+}
+```
+
+### Configurar el Carrusel
+El carrusel se activa automáticamente cuando hay más de 3 elementos. Puedes personalizarlo:
+
+```typescript
+<Carousel
+  itemsPerPage={3}           // Elementos por página
+  showArrows={true}          // Mostrar flechas de navegación
+  showDots={true}            // Mostrar indicadores de puntos
+  autoPlay={false}           // Reproducción automática
+  autoPlayInterval={5000}    // Intervalo de auto-reproducción
+  className="max-w-7xl mx-auto"
+>
+  {elementos}
+</Carousel>
+```
 
 ### Modificar Estilos Glassmorfismo
 - Los estilos globales están en `src/styles.ts`
@@ -187,16 +232,18 @@ Edita el archivo `src/services/portfolioData.ts` para modificar:
 ## 📱 Responsive Design
 
 La landing page está optimizada para:
-- **Móviles**: Navegación hamburguesa, diseño compacto
-- **Tablets**: Layout adaptativo
-- **Desktop**: Navegación completa, máximo aprovechamiento del espacio
+- **Móviles**: Navegación hamburguesa, diseño compacto, carrusel adaptativo
+- **Tablets**: Layout adaptativo, carrusel con 2 elementos por página
+- **Desktop**: Navegación completa, máximo aprovechamiento del espacio, carrusel con 3 elementos
 
 ## 🎯 Características de UX
 
 - **Navegación Fija**: Barra de navegación siempre visible con glassmorfismo
 - **Scroll Suave**: Transiciones fluidas entre secciones
 - **Animaciones de Entrada**: Elementos que aparecen con animaciones
+- **Carrusel Inteligente**: Navegación automática cuando es necesario
 - **Call-to-Actions**: Botones con efectos glassmorfismo
+- **Enlaces de Proyectos**: Acceso directo a demos y repositorios
 - **Información de Contacto**: Enlaces a redes sociales y contacto directo
 - **Efectos Visuales**: Gradientes, sombras y transparencias
 
@@ -211,7 +258,7 @@ El proyecto utiliza TypeScript para:
 ### Estructura de Tipos
 - `src/types/index.ts`: Definiciones de tipos globales
 - Interfaces para componentes, datos y props
-- Tipos para habilidades, experiencia y estudios
+- Tipos para habilidades, proyectos y estudios
 
 ## 🎨 Efectos Glassmorfismo
 
@@ -227,6 +274,23 @@ El proyecto utiliza TypeScript para:
 - `.glass-effect`: Efecto básico de vidrio
 - `.glass-card`: Tarjeta con efecto glassmorfismo
 - `.hover-glow`: Efecto de brillo en hover
+
+## 🎠 Carrusel Inteligente
+
+### Características del Carrusel
+- **Activación Automática**: Se activa cuando hay más de 3 elementos
+- **Navegación Múltiple**: Flechas, puntos y indicador de página
+- **Animaciones Suaves**: Transiciones fluidas entre páginas
+- **Responsive**: Se adapta a diferentes tamaños de pantalla
+- **Configurable**: Múltiples opciones de personalización
+- **Auto-play Opcional**: Reproducción automática configurable
+
+### Funcionalidades
+- **Navegación por Flechas**: Botones con efectos glassmorfismo
+- **Indicadores de Puntos**: Navegación directa a cualquier página
+- **Contador de Páginas**: Muestra la página actual y total
+- **Animaciones de Entrada**: Efectos de aparición para cada página
+- **Optimización de Rendimiento**: Solo renderiza elementos visibles
 
 ## 📊 Métricas de Rendimiento
 

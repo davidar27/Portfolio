@@ -9,7 +9,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'home', text: 'Inicio' },
   { id: 'technical', text: 'Habilidades Técnicas' },
   { id: 'social', text: 'Habilidades Sociales' },
-  { id: 'experience', text: 'Experiencia' },
+  { id: 'experience', text: 'Proyectos' },
   { id: 'studies', text: 'Estudios' },
   { id: 'contact', text: 'Contacto' }
 ];

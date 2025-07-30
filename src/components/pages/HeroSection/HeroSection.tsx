@@ -4,7 +4,6 @@ import styles from "@/styles";
 import { motion } from "framer-motion";
 import { memo } from "react";
 
-// Componente memoizado para el Hero Section
 const HeroSection = memo(() => {
     const info = PortfolioDataService.getPersonalInfo();
 
@@ -42,7 +41,7 @@ const HeroSection = memo(() => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    Ver Experiencia
+                    Ver Proyectos
                 </motion.button>
             </div>
         </motion.div>
