@@ -1,8 +1,14 @@
-import React from 'react'
-// eslint-disable-next-line no-unused-vars
+import React from 'react';
 import { motion } from 'framer-motion';
 
-export const ButtonIcon = ({ label, className, url, children }) => {
+interface ButtonIconProps {
+    label: string;
+    className?: string;
+    url: string;
+    children: React.ReactNode;
+}
+
+export const ButtonIcon: React.FC<ButtonIconProps> = ({ label, className, url, children }) => {
     return (
         <motion.button
             whileHover={{ scale: 1.1 }}
@@ -19,4 +25,4 @@ export const ButtonIcon = ({ label, className, url, children }) => {
             </a>
         </motion.button>
     );
-};
+}; 

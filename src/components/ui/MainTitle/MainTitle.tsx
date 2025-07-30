@@ -1,9 +1,12 @@
-import React from 'react'
-// eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion'
-import styles from '../../../styles'
+import React from 'react';
+import { motion } from 'framer-motion';
+import styles from '@/styles';
 
-export const MainTitle = ({ title }) => {
+interface MainTitleProps {
+    title: string;
+}
+
+export const MainTitle: React.FC<MainTitleProps> = ({ title }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -11,5 +14,5 @@ export const MainTitle = ({ title }) => {
             transition={{ duration: 0.5, delay: 0.2 }}>
             <h1 className={styles.myTitle}>{title}</h1>
         </motion.div>
-    )
-}
+    );
+}; 

@@ -1,8 +1,19 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
-export const Column = ({
+interface ColumnProps {
+    className?: string;
+    titleClassName?: string;
+    iconClassName?: string;
+    descriptionClassName?: string;
+    technologiesClassName?: string;
+    icon?: React.ReactNode;
+    title?: string;
+    description?: string | string[];
+    technologies?: string[];
+}
+
+export const Column: React.FC<ColumnProps> = ({
     className,
     titleClassName,
     iconClassName,
@@ -44,4 +55,4 @@ export const Column = ({
             </div>
         </motion.div>
     );
-};
+}; 
