@@ -1,6 +1,6 @@
 import { TechnicalSkill, SocialSkill, Project, Study, PersonalInfo, SocialLink } from '@/types';
 import React from 'react';
-import { FaReact, FaNode, FaGithub, FaCode, FaRobot, FaPython } from "react-icons/fa";
+import { FaReact, FaNode, FaGithub, FaCode, FaRobot } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa";
 import { GiThink } from 'react-icons/gi';
 import { MdGroups } from "react-icons/md";
