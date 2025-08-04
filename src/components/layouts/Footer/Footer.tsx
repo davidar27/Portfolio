@@ -47,12 +47,10 @@ SocialLinksList.displayName = 'SocialLinksList';
 export const Footer: React.FC = memo(() => {
     return (
         <footer className="bg-gradient-to-t from-[#0a0a0f] via-[#1a1a2e] to-[#16213e] text-white py-16 relative overflow-hidden">
-            {/* Efecto de partículas de fondo optimizado */}
             <div className="absolute inset-0 bg-gradient-to-br from-[rgba(110,7,243,0.03)] to-[rgba(153,69,255,0.01)]"></div>
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="flex flex-col items-center justify-center gap-10">
-                    {/* Logo and Description */}
                     <motion.div 
                         className="flex flex-col items-center gap-6"
                         initial={{ opacity: 0, y: 20 }}
@@ -62,7 +60,6 @@ export const Footer: React.FC = memo(() => {
                     >
                         <div className="relative">
                             <Picture className={`${styles.picture} !h-24 !w-24`} src={MiImage} />
-                            {/* Efecto de brillo optimizado */}
                             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#6e07f3] to-[#9945ff] opacity-15 blur-lg"></div>
                         </div>
                         <div className="text-center">
@@ -74,10 +71,8 @@ export const Footer: React.FC = memo(() => {
                         </div>
                     </motion.div>
 
-                    {/* Social Links */}
                     <SocialLinksList />
 
-                    {/* Copyright */}
                     <motion.div 
                         className="text-center text-[#e0e0e0] text-sm border-t border-[rgba(255,255,255,0.1)] pt-8 w-full"
                         initial={{ opacity: 0 }}
@@ -86,7 +81,7 @@ export const Footer: React.FC = memo(() => {
                         viewport={{ once: true }}
                     >
                         <p>&copy; 2025 Jhonatan Arcos. Todos los derechos reservados.</p>
-                        <p className="text-[#b366ff] mt-2">Desarrollado con ❤️ y TypeScript</p>
+                        <p className="text-[#b366ff] mt-2">Desarrollado con ❤️ y React</p>
                     </motion.div>
                 </div>
             </div>
@@ -94,4 +89,3 @@ export const Footer: React.FC = memo(() => {
     );
 });
 
-Footer.displayName = 'Footer'; 

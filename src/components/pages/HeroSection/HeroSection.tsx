@@ -29,7 +29,7 @@ const HeroSection = memo(({ onNavigate }: HeroSectionProps) => {
                 className="relative"
             >
                 <Picture className={styles.picture} src={info.avatar} />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#6e07f3] to-[#9945ff] opacity-30 blur-2xl animate-pulse"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#6e07f3] to-[#9945ff] opacity-10 animate-spin"></div>
             </motion.button>
             <p className={`${styles.myDescription} max-w-3xl text-center leading-relaxed`}>{info.description}</p>
 

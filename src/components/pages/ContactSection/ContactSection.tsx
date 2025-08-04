@@ -41,7 +41,7 @@ const ContactSection = memo(({ onNavigate }: ContactSectionProps) => {
                     onClick={handleEmailClick}
                     aria-label="Enviar mensaje por correo electrónico"
                 >
-                    📧 Enviar Mensaje
+                    Enviar Mensaje
                 </motion.button>
 
                 <motion.button
@@ -54,7 +54,7 @@ const ContactSection = memo(({ onNavigate }: ContactSectionProps) => {
                     onClick={() => handleBackToHome('home')}
                     aria-label="Volver a la página de inicio"
                 >
-                    🏠 Volver al Inicio
+                    Volver al Inicio
                 </motion.button>
             </motion.div>
         </div>
