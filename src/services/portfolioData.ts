@@ -115,15 +115,21 @@ export class PortfolioDataService {
         return [
             {
                 icon: React.createElement(FaCode),
-                title: "Técnico en Análisis y Desarrollo de Software",
+                title: "Técnico en Desarrollo de Software",
                 description: "SENA",
                 delay: 0.3
             },
             {
-                icon: React.createElement(FaRobot),
-                title: "Pix RTA",
-                description: "PIX RPA",
+                icon: React.createElement(FaCode),
+                title: "Técnologo en Análisis y Desarrollo de Software",
+                description: "SENA",
                 delay: 0.4
+            },
+            {
+                icon: React.createElement(FaRobot),
+                title: "Pix RPA",
+                description: "PIX RPA",
+                delay: 0.5
             }
         ];
     }
